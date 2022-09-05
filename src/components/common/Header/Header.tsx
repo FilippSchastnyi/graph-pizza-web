@@ -7,7 +7,10 @@ import Flex from "../../styled/Flex";
 
 const Header = () => {
   return (
-    <Flex justify = 'space-between'>
+    <Flex
+      justify = 'space-between'
+      align = 'center'
+    >
       <Logo/>
       <HeaderOptions/>
       <HeaderContacts/>

@@ -12,14 +12,18 @@ const HeaderOptions = () => {
   return (
     <List>
       {
-        options.map(option => <li key={option.name}>{option.name}</li>)
+        options.map(option => <Item key={option.name}>{option.name}</Item>)
       }
     </List>
   )
 }
 
 const List = styled.ul`
- display:flex
+  display: flex
+`
+
+const Item = styled.li`
+  margin-left: 10px;
 `
 
 export default HeaderOptions
