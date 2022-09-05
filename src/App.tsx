@@ -1,18 +1,14 @@
 import React from 'react';
-import styled from "styled-components";
+import {GlobalStyle} from './styles/globalStyles';
+import AppRoutes from "./Routes";
 
 function App() {
   return (
-    <Title>
-      test
-    </Title>
+    <>
+      <GlobalStyle/>
+      <AppRoutes/>
+    </>
   );
 }
 
 export default App;
-
-const Title = styled.div`
-  font-size: 1.5em;
-  text-align: center;
-  color: palevioletred;
-`;
