@@ -1,20 +1,28 @@
 import styled from "styled-components";
+import {Link} from "react-router-dom";
 
 const HeaderOptions = () => {
 
   const options = [
-    {name: 'Пицца'},
-    {name: 'Закуски'},
-    {name: 'Десерты'},
-    {name: 'Напитки'},
+    {name: 'Пицца', route: '/pizzas'},
+    {name: 'Закуски', route: '/snacks'},
+    {name: 'Десерты', route: '/desserts'},
+    {name: 'Напитки', route: '/drinks'},
   ]
 
   return (
-    <List>
-      {
-        options.map(option => <Item key={option.name}>{option.name}</Item>)
-      }
-    </List>
+    <nav>
+      <List>
+        {
+          options.map(option =>
+            <Item key={option.name}>
+              <Link to={option.route}>
+                {option.name}
+              </Link>
+            </Item>)
+        }
+      </List>
+    </nav>
   )
 }
 

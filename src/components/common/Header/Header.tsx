@@ -3,25 +3,21 @@ import Logo from "../Logo"
 import HeaderOptions from "./HeaderOptions";
 import HeaderContacts from "./HeaderContacts";
 import HeaderCart from "./HeaderCart";
-import Flex from "../../styled/Flex";
 
 const Header = () => {
   return (
-    <Flex
-      justify = 'space-between'
-      align = 'center'
-    >
+    <Wrapper>
       <Logo/>
       <HeaderOptions/>
       <HeaderContacts/>
       <HeaderCart/>
-    </Flex>
+    </Wrapper>
   )
 }
 
 export default Header
 
-const Wrapper = styled.div`
+const Wrapper = styled.header`
   display: flex;
   justify-content: space-between;
 `
