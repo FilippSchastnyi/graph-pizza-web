@@ -1,13 +1,12 @@
-import styled from "styled-components";
-import {Link} from "react-router-dom";
+import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
-const HeaderOptions = () => {
-
+const HeaderOptions = (): JSX.Element => {
   const options = [
-    {name: 'Пицца', route: '/pizzas'},
-    {name: 'Закуски', route: '/snacks'},
-    {name: 'Десерты', route: '/desserts'},
-    {name: 'Напитки', route: '/drinks'},
+    { name: 'Пицца', route: '/pizzas' },
+    { name: 'Закуски', route: '/snacks' },
+    { name: 'Десерты', route: '/desserts' },
+    { name: 'Напитки', route: '/drinks' }
   ]
 
   return (

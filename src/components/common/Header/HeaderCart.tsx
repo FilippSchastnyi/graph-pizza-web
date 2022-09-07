@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-const HeaderCart = () => {
+const HeaderCart = (): JSX.Element => {
   return (
     <Wrapper>
       <span> 0$ </span>
@@ -15,4 +15,4 @@ export default HeaderCart
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column
-`;
+`

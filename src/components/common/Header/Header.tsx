@@ -1,10 +1,10 @@
-import styled from "styled-components";
-import Logo from "../Logo"
-import HeaderOptions from "./HeaderOptions";
-import HeaderContacts from "./HeaderContacts";
-import HeaderCart from "./HeaderCart";
+import styled from 'styled-components'
+import Logo from '../Logo'
+import HeaderOptions from './HeaderOptions'
+import HeaderContacts from './HeaderContacts'
+import HeaderCart from './HeaderCart'
 
-const Header = () => {
+const Header = (): JSX.Element => {
   return (
     <Wrapper>
       <Logo/>

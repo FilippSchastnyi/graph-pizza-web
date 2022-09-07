@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 
-const Drinks = () => {
+const Drinks = (): JSX.Element => {
   return (
     <div>
       drinks
     </div>
-  );
+  )
 }
 
-export default Drinks;
+export default Drinks
