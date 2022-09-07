@@ -1,22 +1,22 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 interface IFlexProps {
-  direction?: string;
-  align?: string;
-  justify?: string;
-  margin?: string;
+  direction?: string
+  align?: string
+  justify?: string
+  margin?: string
 }
 
-const Flex = (props: any) => {
+const Flex = (props: IFlexProps): JSX.Element => {
   return <StyledFlex {...props} />
 }
 
-const StyledFlex = styled.div`
+const StyledFlex = styled.div<IFlexProps>`
   display: flex;
-  flex-direction: ${(props: any) => props.direction || 'row'};
-  align-items: ${(props: any) => props.align || 'stretch' };
-  justify-content: ${(props: any) => props.justify || 'stretch' };
-  margin: ${({margin}: any) => margin || '0' };
+  flex-direction: ${(props: IFlexProps) => props.direction ?? 'row'};
+  align-items: ${(props: IFlexProps) => props.align ?? 'stretch'};
+  justify-content: ${(props: IFlexProps) => props.justify ?? 'stretch'};
+  margin: ${({ margin }: any) => margin ?? '0'};
 `
 
 export default Flex

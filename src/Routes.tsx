@@ -1,13 +1,13 @@
-import {Route, Routes} from "react-router-dom";
-import Pizzas from "./pages/Pizzas/Pizzas";
-import Deserts from "./pages/Deserts/Deserts";
-import Snacks from "./pages/Snacks/Snacks";
-import Drinks from "./pages/Drinks/Drinks";
-import React from "react";
-import Layout from "./components/common/Layout";
-import Hero from "./pages/Hero/Hero";
+import { Route, Routes } from 'react-router-dom'
+import Pizzas from './pages/Pizzas/Pizzas'
+import Deserts from './pages/Deserts/Deserts'
+import Snacks from './pages/Snacks/Snacks'
+import Drinks from './pages/Drinks/Drinks'
+import React from 'react'
+import Layout from './components/common/Layout'
+import Hero from './pages/Hero/Hero'
 
-const AppRoutes = () =>
+const AppRoutes = (): JSX.Element =>
   <Routes>
     <Route path="/" element={<Layout/>}>
       <Route index element={<Hero/>}/>
@@ -19,4 +19,3 @@ const AppRoutes = () =>
   </Routes>
 
 export default AppRoutes
-

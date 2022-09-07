@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 
-const Pizzas = () => {
+const Pizzas = (): JSX.Element => {
   return (
     <div>
       pizzas
     </div>
-  );
+  )
 }
 
-export default Pizzas;
+export default Pizzas
