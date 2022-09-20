@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Deserts = (): JSX.Element => {
-  return (
-    <div>
-      desserts
-    </div>
-  )
-}
+  return <div>desserts</div>;
+};
 
-export default Deserts
+export default Deserts;

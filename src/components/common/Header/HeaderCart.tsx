@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const HeaderCart = (): JSX.Element => {
   return (
@@ -7,12 +7,12 @@ const HeaderCart = (): JSX.Element => {
       <a href="#"> Корзина </a>
       <a href="#"> Адрес </a>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default HeaderCart
+export default HeaderCart;
 
 const Wrapper = styled.div`
   display: flex;
-  flex-direction: column
-`
+  flex-direction: column;
+`;
