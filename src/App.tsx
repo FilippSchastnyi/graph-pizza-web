@@ -1,11 +1,11 @@
 import { GlobalStyle } from './styles/globalStyles'
 import AppRoutes from './Routes'
 
-function App (): JSX.Element {
+function App(): JSX.Element {
   return (
     <>
-      <GlobalStyle/>
-      <AppRoutes/>
+      <GlobalStyle />
+      <AppRoutes />
     </>
   )
 }

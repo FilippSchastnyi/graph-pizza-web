@@ -1,8 +1,5 @@
+const Logo = (): JSX.Element => {
+  return <span>Graph Pizza</span>;
+};
 
-const Logo = () => {
-  return (
-    <span>Graph Pizza</span>
-  )
-}
-
-export default Logo
+export default Logo;
