@@ -16,6 +16,7 @@ export const GlobalStyle = createGlobalStyle`
   html, body {
     width: 100%;
     min-width: 320px;
+    min-height: 100vh;
   }
 
   input, textarea {
@@ -83,6 +84,12 @@ export const GlobalStyle = createGlobalStyle`
 
   input, select, textarea, button {
     font-family: inherit;
+  }
+  
+  #root {
+    display: flex;
+    min-width: 100%;
+    min-height: 100vh;
   }
 
   body {
