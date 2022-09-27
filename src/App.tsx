@@ -5,7 +5,9 @@ function App(): JSX.Element {
   return (
     <>
       <GlobalStyle />
-      <AppRoutes />
+      <AppRoutes
+        isAuthorized={false}
+      />
     </>
   )
 }

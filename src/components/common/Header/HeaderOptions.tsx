@@ -1,23 +1,30 @@
+import { useId } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { IHeaderOptions } from '../../../Interfaces/Options'
 
-const HeaderOptions = (): JSX.Element => {
+const HeaderOptions = ({setModalState}: IHeaderOptions): JSX.Element => {
   const options = [
-    { name: "Пицца", route: "/pizzas" },
-    { name: "Закуски", route: "/snacks" },
-    { name: "Десерты", route: "/desserts" },
-    { name: "Напитки", route: "/drinks" },
+    { name: "Пицца", route: "/pizzas", id: useId() },
+    { name: "Закуски", route: "/snacks", id: useId() },
+    { name: "Десерты", route: "/desserts", id: useId() },
+    { name: "Напитки", route: "/drinks", id: useId() },
   ];
+
 
   return (
     <nav>
       <List>
         {options.map((option) => (
-          <Item key={option.name}>
+          <Item key={option.id}>
+            <p>{option.id}</p>
             <Link to={option.route}>{option.name}</Link>
           </Item>
         ))}
       </List>
+      <button onClick={()=>{setModalState(true)}}>
+        Registration
+      </button>
     </nav>
   );
 };
