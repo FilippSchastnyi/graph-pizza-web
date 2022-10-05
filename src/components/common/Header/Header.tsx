@@ -3,7 +3,7 @@ import Logo from "../Logo";
 import HeaderOptions from "./HeaderOptions";
 import HeaderContacts from "./HeaderContacts";
 import HeaderCart from "./HeaderCart";
-import { IHeaderOptions } from '../../../Interfaces/Options'
+import { IHeaderOptions } from '../../../ts/interfaces/Options/IHeaderOptions'
 
 const Header = ({setModalState}: IHeaderOptions): JSX.Element => {
   return (

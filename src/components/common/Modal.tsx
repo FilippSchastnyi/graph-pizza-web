@@ -1,15 +1,12 @@
 import styled from 'styled-components'
 import React from 'react'
 import ReactDOM from 'react-dom'
-
-interface IModalProps {
-  isOpen: boolean;
-  children: JSX.Element;
-  onHandleClickCloseButton: () => void;
-}
+import { IModal } from '../../ts/interfaces/UI/IModal'
 
 
-const Modal = ({ isOpen, children, onHandleClickCloseButton }: IModalProps): JSX.Element | null => {
+
+
+const Modal = ({ isOpen, children, onHandleClickCloseButton }: IModal): JSX.Element | null => {
   if (!isOpen) return null
 
 

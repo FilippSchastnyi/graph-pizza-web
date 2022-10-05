@@ -4,6 +4,8 @@ import Footer from './Footer'
 import { Outlet } from 'react-router-dom'
 import Modal from './Modal'
 import styled from 'styled-components'
+import Button from '../UI/Button'
+import { ButtonMode, ButtonSize } from '../../ts/enums/UI/Button'
 
 const Layout = (): JSX.Element => {
   const [modalState, setModalState] = useState<boolean>(false)
@@ -22,7 +24,11 @@ const Layout = (): JSX.Element => {
           setModalState(false)
         }}
       >
-        <p>heeey</p>
+        <Button
+          size={ButtonSize.lg}
+          mode={ButtonMode.blue}>
+          <p>lol</p>
+        </Button>
       </Modal>
     </Wrapper>
   )
