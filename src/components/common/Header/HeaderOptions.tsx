@@ -1,7 +1,7 @@
 import { useId } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { IHeaderOptions } from '../../../Interfaces/Options'
+import { IHeaderOptions } from '../../../ts/interfaces/Options/IHeaderOptions'
 
 const HeaderOptions = ({setModalState}: IHeaderOptions): JSX.Element => {
   const options = [
