@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { settings } from './Button.settings'
 import { IButton } from '../../ts/interfaces/UI/IButton'
 import { ButtonMode, ButtonSize } from '../../ts/enums/UI/Button'
+import { color } from '../../config/Colors'
 
 const Button = ( props : IButton): JSX.Element => {
   const btnClasses = [props.classes].join(' ')
@@ -15,7 +16,7 @@ const Button = ( props : IButton): JSX.Element => {
   )
 }
 
-const getTheme = (mode: ButtonMode): string => {
+const getMode = (mode: ButtonMode): string => {
   return settings.mode[mode]
 }
 
@@ -24,10 +25,12 @@ const getSize = (size: ButtonSize): string => {
 }
 
 const Wrapper = styled.button<IButton>`
-  background: #F5F5FA;
+  background: ${color.$colorWhite};
   padding: 10px 5px;
-  ${props => getTheme(props.mode)}
+  ${props => getMode(props.mode)}
   ${props => getSize(props.size)}
+  
+  
   border-radius: 32px;
   box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5),
   5px 5px 10px rgba(170, 170, 204, 0.25),
