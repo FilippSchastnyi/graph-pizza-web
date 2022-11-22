@@ -1,22 +1,28 @@
 import styled from 'styled-components'
 
 interface IGoodsCardProps {
-  text: string;
-  image: string
+  name: string;
+  info: any[];
+  image: string;
+  description: string
 }
 
-export const GoodsCard = ({ text, image }: IGoodsCardProps): JSX.Element => {
+export const GoodsCard = ({ name, info, image, description }: IGoodsCardProps): JSX.Element => {
   return (<Container>
     <Header>
       <img src={image} alt='pizza' />
     </Header>
     <Inner>
       <Content>
-        {text}
+        <h4>{name}</h4>
+        {info.map((i, index) => {
+          return (
+            <GoodsCardInfo>
+
+            </GoodsCardInfo>
+          )
+        })}
       </Content>
-      <Footer>
-        PRICE 20$!
-      </Footer>
     </Inner>
   </Container>)
 }
@@ -30,9 +36,6 @@ const Container = styled.div`
 const Inner = styled.div`
   height: calc(100% - 50px);
   padding: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 `
 
 const Header = styled.div`
@@ -48,9 +51,5 @@ const Header = styled.div`
 `
 
 const Content = styled.div`
-`
-
-const Footer = styled.div`
-
 `
 
