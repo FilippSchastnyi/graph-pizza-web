@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import { settings } from './Button.settings'
-import { IButton } from '../../ts/interfaces/UI/IButton'
 import { ButtonMode, ButtonSize } from '../../ts/enums/UI/Button'
 import { color } from '../../config/Colors'
+import { IButton } from '../../ts/interfaces/UI_interfaces'
 
 const Button = ( props : IButton): JSX.Element => {
   const btnClasses = [props.classes].join(' ')

@@ -6,21 +6,33 @@ import Modal from './Modal'
 import styled from 'styled-components'
 import Button from '../UI/Button'
 import { ButtonMode, ButtonSize } from '../../ts/enums/UI/Button'
+import { Flyout } from './Flyout'
 
 const Layout = (): JSX.Element => {
   const [modalState, setModalState] = useState<boolean>(false)
+  const [flyoutState, setFlyoutState] = useState<boolean>(false)
+
   return (
     <Wrapper>
       <Header
         setModalState={setModalState}
+        setFlyoutState={setFlyoutState}
       />
+        <Flyout
+          isOpen={flyoutState}
+          closeFlyout={() => {
+            setFlyoutState(false)
+          }}
+        >
+
+        </Flyout>
       <Main>
         <Outlet />
       </Main>
       <Footer />
       <Modal
         isOpen={modalState}
-        onHandleClickCloseButton={() => {
+        closePopup={() => {
           setModalState(false)
         }}
       >

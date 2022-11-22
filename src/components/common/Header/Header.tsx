@@ -1,11 +1,15 @@
 import styled from "styled-components";
 import Logo from "../Logo";
-import HeaderOptions from "./HeaderOptions";
+import HeaderOptions from './HeaderOptions'
+import HeaderCart from './HeaderCart'
 import HeaderContacts from "./HeaderContacts";
-import HeaderCart from "./HeaderCart";
-import { IHeaderOptions } from '../../../ts/interfaces/Options/IHeaderOptions'
 
-const Header = ({setModalState}: IHeaderOptions): JSX.Element => {
+export interface IHeader {
+  setModalState: (modalState: boolean) => void;
+  setFlyoutState: (flyoutState: boolean) => void;
+}
+
+const Header = ({setModalState, setFlyoutState}: IHeader): JSX.Element => {
   return (
     <Wrapper>
       <Logo />
@@ -13,7 +17,9 @@ const Header = ({setModalState}: IHeaderOptions): JSX.Element => {
         setModalState = {setModalState}
       />
       <HeaderContacts />
-      <HeaderCart />
+      <HeaderCart
+        setFlyoutState = {setFlyoutState}
+      />
     </Wrapper>
   );
 };
@@ -23,7 +29,8 @@ export default Header;
 const Wrapper = styled.header`
   display: flex;
   justify-content: space-between;
-  position: absolute;
+  background-color: #dad9d9;
+  position: sticky;
   left: 0;
   right: 0;
   min-height: 50px;

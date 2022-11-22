@@ -1,18 +1,23 @@
-import styled from "styled-components";
+import styled from 'styled-components'
+import { IHeader } from './Header'
 
-const HeaderCart = (): JSX.Element => {
+interface ICartOptions extends Omit<IHeader, 'setModalState'> {}
+
+const HeaderCart = ({ setFlyoutState }: ICartOptions): JSX.Element => {
   return (
-    <Wrapper>
+    <Wrapper
+      onClick={()=>{setFlyoutState(true)}}
+    >
       <span> 0$ </span>
-      <a href="#"> Корзина </a>
-      <a href="#"> Адрес </a>
+      <a href='#'> Корзина </a>
+      <a href='#'> Адрес </a>
     </Wrapper>
-  );
-};
+  )
+}
 
-export default HeaderCart;
+export default HeaderCart
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-`;
+`

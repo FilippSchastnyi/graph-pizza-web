@@ -1,26 +1,26 @@
 import styled from 'styled-components'
 import React from 'react'
-import ReactDOM from 'react-dom'
-import { IModal } from '../../ts/interfaces/UI/IModal'
+import { IModal } from '../../ts/interfaces/UI_interfaces'
+import { Portal } from '../UI/Portal'
+import { Overlay } from './Overlay'
 
 
-
-
-const Modal = ({ isOpen, children, onHandleClickCloseButton }: IModal): JSX.Element | null => {
+const Modal = ({ isOpen, children, closePopup }: IModal): JSX.Element | null => {
   if (!isOpen) return null
 
 
-  return ReactDOM.createPortal(
-    <>
-      <Overlay />
-      <Wrapper>
-        {children} Modaaal
-        <button onClick={onHandleClickCloseButton}>
-          close
-        </button>
-      </Wrapper>
-    </>,
-    document.getElementById('portal') as HTMLElement
+  return (
+    <Portal>
+      <>
+        <Overlay onHandleOverlayClick={closePopup}/>
+        <Wrapper>
+          {children}
+          <button onClick={closePopup}>
+            close
+          </button>
+        </Wrapper>
+      </>
+    </Portal>
   )
 }
 
@@ -34,15 +34,5 @@ const Wrapper = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1000;
-`
-
-const Overlay = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1000;
-  background-color: rgba(0, 0, 0, 0.7);
-  opacity: 0.7;
+  border-radius: 10px;
 `

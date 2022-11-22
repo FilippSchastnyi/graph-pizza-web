@@ -1,5 +1,5 @@
-import { IButtonSettings } from "../../ts/interfaces/UI/IButton";
 import { color } from '../../config/Colors'
+import { IButtonSettings } from '../../ts/interfaces/UI_interfaces'
 
 export const settings : IButtonSettings = {
   mode: {

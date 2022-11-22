@@ -1,7 +1,13 @@
 import { useId } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { IHeaderOptions } from '../../../ts/interfaces/Options/IHeaderOptions'
+import { IHeader } from './Header'
+
+interface IHeaderOptions {
+  setModalState: (modalState: boolean) => void;
+}
+
+interface IHeaderOptions extends Omit<IHeader, 'setFlyoutState'> {}
 
 const HeaderOptions = ({setModalState}: IHeaderOptions): JSX.Element => {
   const options = [
