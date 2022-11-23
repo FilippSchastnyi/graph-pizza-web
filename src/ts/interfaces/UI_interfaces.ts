@@ -28,7 +28,7 @@ export interface IButtonSettings {
 
 export interface IModal {
   isOpen: boolean;
-  children: JSX.Element;
+  children?: JSX.Element;
   closePopup: () => void;
 }
 
