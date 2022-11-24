@@ -1,4 +1,7 @@
 import styled from 'styled-components'
+import { GoodsCardInfo } from './GoodsCardInfo'
+import { useState } from 'react'
+import Modal from '../Modal'
 
 interface IGoodsCardProps {
   name: string;
@@ -8,23 +11,36 @@ interface IGoodsCardProps {
 }
 
 export const GoodsCard = ({ name, info, image, description }: IGoodsCardProps): JSX.Element => {
-  return (<Container>
-    <Header>
-      <img src={image} alt='pizza' />
-    </Header>
-    <Inner>
-      <Content>
-        <h4>{name}</h4>
-        {info.map((i, index) => {
-          return (
-            <GoodsCardInfo>
 
-            </GoodsCardInfo>
-          )
-        })}
-      </Content>
-    </Inner>
-  </Container>)
+  const [isAboutPopupOpen, setIsAboutPopupOpen] = useState<boolean>(true)
+
+  const toggleAboutPopup = (): void => {
+    setIsAboutPopupOpen(!isAboutPopupOpen)
+  }
+
+  return (
+    <Container>
+      <Modal closePopup={toggleAboutPopup} isOpen={isAboutPopupOpen}/>
+      <Header onClick={()=>{setIsAboutPopupOpen(true)}}>
+        <img src={image} alt='pizza' />
+      </Header>
+
+      <Inner>
+        <Content>
+          <h4>{name}</h4>
+          {info.map((i, index) => {
+            return (
+              <GoodsCardInfo
+                key={index}
+                price={i.price}
+                size={i.size}
+                weight={i.weight}
+              />
+            )
+          })}
+        </Content>
+      </Inner>
+    </Container>)
 }
 
 const Container = styled.div`
@@ -41,6 +57,7 @@ const Inner = styled.div`
 const Header = styled.div`
   height: 50px;
   overflow: hidden;
+  cursor: pointer;
 
   > img {
     width: 100%;

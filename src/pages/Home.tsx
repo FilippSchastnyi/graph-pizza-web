@@ -4,24 +4,37 @@ import Image from '../assets/vecteezy_fresh-pizza-and-pizza-box-clipart-design-i
 import styled from 'styled-components'
 
 export const Home = (): JSX.Element => {
+
   const pizzas = [
     {
       name: 'Пепперони и колбаски',
       info: [
         {
+          size: 'Большая',
           price: 29.90,
-          low_size: 0.8,
-          up_size: 0.9
+          calories: 2481,
+          carbohydrates: 228,
+          fats: 130,
+          protein: 86,
+          weight: '0.6-0.7',
         },
         {
+          size: 'Стандартная',
           price: 23.90,
-          low_size: 0.7,
-          up_size: 0.6
+          calories: 2126,
+          carbohydrates: 198,
+          fats: 128,
+          protein: 74,
+          weight: '0.7-0.8',
         },
         {
+          size: 'Маленькая',
           price: 19.90,
-          low_size: 0.6,
-          up_size: 0.5
+          calories: 1953,
+          carbohydrates: 174,
+          fats: 108,
+          protein: 63,
+          weight: '0.6-0.7',
         }
       ],
       image: Image,
@@ -60,5 +73,5 @@ const GoodsCell = styled.li`
   flex: 0 0 calc(100% / 3 - 20px);
   width: calc(100% / 3 - 20px);
   margin: 10px;
-  height: 200px;
+  height: auto;
 `
